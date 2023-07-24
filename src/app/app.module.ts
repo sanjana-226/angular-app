@@ -8,9 +8,10 @@ import { RegisterComponent } from './register/register.component';
 import { TodoComponent } from './todo/todo.component';
 import { PostsComponent } from './posts/posts.component';
 import { AlbumComponent } from './album/album.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, TodoComponent, PostsComponent, AlbumComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, TodoComponent, PostsComponent, AlbumComponent, DashboardComponent],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
