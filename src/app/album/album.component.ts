@@ -7,6 +7,19 @@ import { RouterLink } from "@angular/router";
   templateUrl: "./album.component.html",
   styleUrls: ["./album.component.css"],
   imports: [RouterLink],
-
 })
-export class AlbumComponent {}
+export class AlbumComponent {
+  myStringifiedJson: any;
+
+  constructor() {}
+
+  ngOnInit() {
+    fetch("https://jsonplaceholder.typicode.com/albums")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+    // .then(json => {
+    //   this.myStringifiedJson = json;
+    //   console.log(this.myStringifiedJson.map(t => t['title']));    // <-- print here
+    // });
+  }
+}
