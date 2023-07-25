@@ -2,18 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-import { TodoComponent } from './todo/todo.component';
-import { PostsComponent } from './posts/posts.component';
-import { AlbumComponent } from './album/album.component';
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, TodoComponent, PostsComponent, AlbumComponent, DashboardComponent],
-  imports: [BrowserModule, ReactiveFormsModule],
+  imports: [BrowserModule, RegisterComponent, LoginComponent, RouterModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
+  declarations: [],
 })
 export class AppModule {}

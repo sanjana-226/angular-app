@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { AlbumComponent } from '../album/album.component';
-import { TodoComponent } from '../todo/todo.component';
-import { PostsComponent } from '../posts/posts.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  imports: [RouterLink],
 })
-export class DashboardComponent {
-
-}
+export class DashboardComponent {}

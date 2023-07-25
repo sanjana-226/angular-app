@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-album',
-  templateUrl: './album.component.html',
-  styleUrls: ['./album.component.css']
+  selector: "app-album",
+  standalone: true,
+  templateUrl: "./album.component.html",
+  styleUrls: ["./album.component.css"],
 })
-export class AlbumComponent {
-
-}
+export class AlbumComponent {}

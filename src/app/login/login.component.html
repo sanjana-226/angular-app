@@ -1,4 +1,38 @@
-<body>
+<form action="action_page.php" method="post">
+  <!-- <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div> -->
+
+  <div class="container">
+    <label for="email">Email </label>
+    <input
+      id="email"
+      type="text"
+      formControlName="email"
+      placeholder="Enter Email"
+      required
+    />
+
+    <label for="password">Password </label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="Enter Password"
+      required
+    />
+
+    <!-- <button type="submit">Login</button> -->
+    <button type="submit" [routerLink]="['./dashboard']">Login</button>
+  </div>
+
+  <div class="container" style="background-color: #f1f1f1">
+    <h3>New User?</h3>
+    <a class="nav-link" [routerLink]="['./register']">Register</a> <br />
+  </div>
+</form>
+
+<!-- <body>
   <h1>Login</h1>
   <label for="email">Email </label>
   <input id="email" type="text" formControlName="email" />
@@ -6,10 +40,45 @@
   <label for="password">Password </label>
   <input id="password" type="password" formControlName="password" />
 
-  <button type="submit">Login</button>
-  
-  <h3>New User?</h3>
-  <button type="submit">Register</button>
-  <!-- <a class="button" routerLink="/crisis-list">Crisis Center</a> -->
-  <!-- <a [routerLink]="['./register']">Register</a> -->
-</body>
+  <button type="submit" [routerLink]="['./dashboard']">Login</button> -->
+<!-- go to dashboard w auth system -->
+
+<!-- <h3>New User?</h3> -->
+<!-- <button type="submit">Register</button> -->
+<!-- <a class="nav-link" routerLink="/register">Register</a> -->
+<!-- <a class="nav-link" [routerLink]="['./register']">Register</a> <br /> -->
+<!-- <a class="nav-link" [routerLink]="['./dashboard']">Dashboard</a>   -->
+<!-- </body> -->
+
+<!-- <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form>
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="login"
+        placeholder="login"
+      /><br /><br />
+
+      <input
+        type="text"
+        id="pwd"
+        class="fadeIn third"
+        name="login"
+        placeholder="password"
+      /><br /><br />
+
+      <input type="submit" class="fadeIn fourth" value="Log In" />
+    </form>
+    <br />
+
+    <div id="formFooter">
+      <a class="underlineHover" href="#" style="color: rgb(241, 148, 41)"
+        >New User? Register here</a
+      >
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"></script> -->
