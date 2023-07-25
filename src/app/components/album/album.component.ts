@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { AlbumModel } from "../../models/album.model";
-import { AlbumsService } from "../../services/albums.service";
+import { AlbumsService } from "src/app/services/albums.service";
 import { CommonModule } from "@angular/common";
 
 @Component({
