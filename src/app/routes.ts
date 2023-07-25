@@ -1,10 +1,10 @@
 import { Routes } from "@angular/router";
-import { RegisterComponent } from "./register/register.component";
-import { LoginComponent } from "./login/login.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { TodoComponent } from "./todo/todo.component";
-import { PostsComponent } from "./posts/posts.component";
-import { AlbumComponent } from "./album/album.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { LoginComponent } from "./components/login/login.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { TodoComponent } from "./components/todo/todo.component";
+import { PostsComponent } from "./components/posts/posts.component";
+import { AlbumComponent } from "./components/album/album.component";
 
 const routeConfig: Routes = [
   {
