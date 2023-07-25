@@ -1,9 +1,20 @@
 <div class="sidenav">
   <a [routerLink]="['../../dashboard']">Dashboard</a>
   <a [routerLink]="['../todo']">ToDo</a>
-  <!-- <a [routerLink]="['posts']">Posts</a> -->
+  <a >Posts</a>
   <a [routerLink]="['../album']">Album</a>
 </div>
-<div class="main">
-  <p>posts works!</p>
+<div class="main" *ngIf="posts">
+  <ul>
+    <li *ngFor="let post of posts">
+      <!-- <mat-card></mat-card> -->
+      <p>
+        Post ID: {{ post.id }} <br />
+        UserID: {{ post.userId }}<br />
+        Title: {{ post.title }} <br />
+        <!-- make title a link? to /posts/postid=? -->
+        Body: {{ post.body }}
+      </p>
+    </li>
+  </ul>
 </div>

@@ -2,15 +2,18 @@
   <a [routerLink]="['../../dashboard']">Dashboard</a>
   <a [routerLink]="['../todo']">ToDo</a>
   <a [routerLink]="['../posts']">Posts</a>
-  <!-- <a [routerLink]="['album']">Album</a> -->
+  <a>Album</a>
 </div>
 
-<div *ngFor="let album of albums">
-  <h2>{{ album.id }}</h2>
-  <p>{{ album.title }}</p>
+<div class="main" *ngIf="albums">
+  <ul>
+    <li *ngFor="let album of albums">
+      <p>
+        Album ID: {{ album.id }} <br />
+        UserID: {{ album.userId }}<br />
+        Title: {{ album.title }}
+      </p>
+    </li>
+  </ul>
 </div>
 
-<div class="main">
-  <p>album works!</p>
-  
-</div>
