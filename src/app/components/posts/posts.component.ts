@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PostsModel } from 'src/app/models/posts.model';
 import { OnInit } from '@angular/core';
-
+import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-posts',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterLink,MatCardModule],
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })

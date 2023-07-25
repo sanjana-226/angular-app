@@ -3,13 +3,13 @@ import { RouterLink } from "@angular/router";
 import { AlbumModel } from "../../models/album.model";
 import { AlbumsService } from "src/app/services/albums.service";
 import { CommonModule } from "@angular/common";
-
+import { MatCardModule } from "@angular/material/card";
 @Component({
   selector: "app-album",
   standalone: true,
   templateUrl: "./album.component.html",
   styleUrls: ["./album.component.css"],
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule,MatCardModule],
   providers:[AlbumsService]
 })
 

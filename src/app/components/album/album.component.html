@@ -8,10 +8,22 @@
 <div class="main" *ngIf="albums">
   <ul>
     <li *ngFor="let album of albums">
+      <div class="post">
+        <mat-card> 
+          <!-- add click condition here -->
+          <mat-card-title> {{ album.title }} </mat-card-title>
+          <mat-card-subtitle>
+            TaskID: {{ album.id }} UserID: {{ album.userId }}
+          </mat-card-subtitle>
+          <mat-card-content>
+           display the pictures here? with a click condition
+          </mat-card-content>
+        </mat-card>
+        <br />
+      </div>
+      
       <p>
-        Album ID: {{ album.id }} <br />
-        UserID: {{ album.userId }}<br />
-        Title: {{ album.title }}
+        
       </p>
     </li>
   </ul>
