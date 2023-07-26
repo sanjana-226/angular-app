@@ -9,7 +9,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { ImageModalComponent } from "./components/image-modal/image-modal.component";
+import { ImageDetailsComponent } from './components/image-details/image-details.component';
 
 @NgModule({
   imports: [
@@ -22,8 +22,8 @@ import { ImageModalComponent } from "./components/image-modal/image-modal.compon
     MatDialogModule,
     BrowserAnimationsModule,
   ],
-  // providers: [AlbumsService, PostsService, TodoService],
-  bootstrap: [],
-  declarations: [ImageModalComponent],
+  declarations: [
+    
+  ],
 })
 export class AppModule {}
