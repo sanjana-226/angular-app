@@ -1,5 +1,5 @@
+<!-- album.component.html -->
 <div class="sidenav">
-  <!-- <a [routerLink]="['../../dashboard']">Dashboard</a> -->
   <a [routerLink]="['../todo']">ToDo</a>
   <a [routerLink]="['../posts']">Posts</a>
   <a>Album</a>
@@ -10,15 +10,26 @@
     <li *ngFor="let album of albums">
       <div class="post">
         <mat-card>
-          <mat-card-title> {{ album.title }} </mat-card-title>
+          <mat-card-title>{{ album.title }}</mat-card-title>
           <mat-card-subtitle>
             TaskID: {{ album.id }} UserID: {{ album.userId }}
           </mat-card-subtitle>
           <mat-card-content>
-            display the pictures here? with a click condition
+            <!-- Display thumbnails for the current album's photos -->
+            <div *ngIf="album.photos">
+              <div class="thumbnails-container">
+                <div *ngFor="let photo of album.photos">
+                  <img [src]="photo.thumbnailUrl" alt="{{ photo.title }}" />
+                  <!-- <img
+                    [src]="photo.thumbnailUrl"
+                    alt="{{ photo.title }}"
+                    (click)="openImage(photo.url)"
+                  /> -->
+                </div>
+              </div>
+            </div>
           </mat-card-content>
         </mat-card>
-        <br />
       </div>
     </li>
   </ul>

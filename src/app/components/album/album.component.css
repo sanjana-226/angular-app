@@ -1,46 +1,71 @@
+/* album.component.css */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.thumbnails-container {
+  display: grid;
+  grid-template-columns: repeat(10, 100px); /* Set 4 columns with a width of 100px each */
+  grid-auto-rows: 100px; /* Set the height of each row to 100px */
+  grid-gap: 10px;
+  /* Allow grid items to wrap if the container's width is exceeded */
+  overflow-wrap: anywhere;
+}
+.post {
+  margin-right: 10px;
+}
+
+/* Adjust the thumbnail size as per your requirement */
+.post img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Maintain aspect ratio for the images */
+}
+
 li {
   list-style-type: none;
+  display: flex;
 }
 mat-card {
   padding: 10pt;
 }
 
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-top: 30px;
+  margin-left: 160px;
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
-  
   .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
+    font-size: 18px;
   }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .main {
-    margin-top: 30px;
-    margin-left: 160px;
-    padding: 0px 10px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-    .sidenav a {
-      font-size: 18px;
-    }
-  }
-  
+}
