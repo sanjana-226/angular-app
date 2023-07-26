@@ -3,8 +3,7 @@ import { RouterLink } from "@angular/router";
 import { AlbumModel } from "../../models/album.model";
 import { CommonModule } from "@angular/common";
 import { MatCardModule } from "@angular/material/card";
-import { MatDialog } from "@angular/material/dialog";
-import { PhotosComponent } from "../photos/photos.component";
+
 @Component({
   selector: "app-album",
   standalone: true,
@@ -12,16 +11,33 @@ import { PhotosComponent } from "../photos/photos.component";
   styleUrls: ["./album.component.css"],
   imports: [RouterLink, CommonModule, MatCardModule],
 })
+
+// export class AlbumComponent implements OnInit {
+//   albums: AlbumModel[] = []; // Assuming the API response returns an array of objects
+
+//   ngOnInit() {
+//     fetch("https://jsonplaceholder.typicode.com/albums")
+//       .then((response) => response.json())
+//       .then((data) => {
+//         this.albums = data;
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching data:", error);
+//       });
+//   }
+// }
+
+
 export class AlbumComponent implements OnInit {
   albums: AlbumModel[] = [];
-
-  constructor(private dialog: MatDialog) {}
+  // constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
     fetch("https://jsonplaceholder.typicode.com/albums")
       .then((response) => response.json())
       .then((albumsData) => {
         this.albums = albumsData;
+        // Fetch photos for each album
         const fetchPhotosPromises = this.albums.map((album) =>
           fetch(
             `https://jsonplaceholder.typicode.com/albums/${album.id}/photos`
@@ -43,8 +59,11 @@ export class AlbumComponent implements OnInit {
       });
   }
   openImage(imageUrl: string) {
-    this.dialog.open(PhotosComponent, {
-      data: { imageUrl }, // Pass the image URL as data to the modal
-    });
+    alert("Clicked on thumbnail. Opening full-size image: " + imageUrl);
   }
+  // openImage(imageUrl: string) {
+  //   this.dialog.open(ImageModalComponent, {
+  //     data: { imageSrc: imageUrl },
+  //   });
+  // }
 }
