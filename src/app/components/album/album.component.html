@@ -19,12 +19,11 @@
             <div *ngIf="album.photos">
               <div class="thumbnails-container">
                 <div *ngFor="let photo of album.photos">
-                  <img [src]="photo.thumbnailUrl" alt="{{ photo.title }}" />
-                  <!-- <img
+                  <img
                     [src]="photo.thumbnailUrl"
                     alt="{{ photo.title }}"
                     (click)="openImage(photo.url)"
-                  /> -->
+                  />
                 </div>
               </div>
             </div>

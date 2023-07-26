@@ -58,6 +58,9 @@ export class AlbumComponent implements OnInit {
         console.error("Error fetching albums:", error);
       });
   }
+  openImage(imageUrl: string) {
+    alert("Clicked on thumbnail. Opening full-size image: " + imageUrl);
+  }
   // openImage(imageUrl: string) {
   //   this.dialog.open(ImageModalComponent, {
   //     data: { imageSrc: imageUrl },
