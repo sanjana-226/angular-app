@@ -16,7 +16,8 @@ export class TodoComponent implements OnInit {
   tasks: TodoModel[] = []; // Assuming the API response returns an array of objects
 
   ngOnInit() {
-    fetch("https://jsonplaceholder.typicode.com/albums")
+    //userid 1 only or ?
+    fetch("https://jsonplaceholder.typicode.com/todos?userId=1")
       .then((response) => response.json())
       .then((data) => {
         this.tasks = data;
@@ -27,5 +28,22 @@ export class TodoComponent implements OnInit {
   }
   done(task: TodoModel) {
     task.completed = !task.completed;
+  }
+  newTask() {
+    var taskTitle = document.getElementById("newTaskId");
+    fetch("https://jsonplaceholder.typicode.com/todos", {
+      method: "POST",
+      body: JSON.stringify({
+        title: taskTitle, 
+        id: 1, //calculate?
+        userId: 1, //input
+        completed: false,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json)); // add to the dom?
   }
 }

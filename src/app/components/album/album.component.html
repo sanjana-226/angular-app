@@ -1,5 +1,5 @@
 <div class="sidenav">
-  <a [routerLink]="['../../dashboard']">Dashboard</a>
+  <!-- <a [routerLink]="['../../dashboard']">Dashboard</a> -->
   <a [routerLink]="['../todo']">ToDo</a>
   <a [routerLink]="['../posts']">Posts</a>
   <a>Album</a>
@@ -9,23 +9,17 @@
   <ul>
     <li *ngFor="let album of albums">
       <div class="post">
-        <mat-card> 
-          <!-- add click condition here -->
+        <mat-card>
           <mat-card-title> {{ album.title }} </mat-card-title>
           <mat-card-subtitle>
             TaskID: {{ album.id }} UserID: {{ album.userId }}
           </mat-card-subtitle>
           <mat-card-content>
-           display the pictures here? with a click condition
+            display the pictures here? with a click condition
           </mat-card-content>
         </mat-card>
         <br />
       </div>
-      
-      <p>
-        
-      </p>
     </li>
   </ul>
 </div>
-

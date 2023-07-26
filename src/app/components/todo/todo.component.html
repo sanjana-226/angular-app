@@ -1,10 +1,16 @@
 <div class="sidenav">
-  <a [routerLink]="['../../dashboard']">Dashboard</a>
+  <!-- <a [routerLink]="['../../dashboard']">Dashboard</a> -->
   <a>ToDo</a>
   <a [routerLink]="['../posts']">Posts</a>
   <a [routerLink]="['../album']">Album</a>
 </div>
 <div class="main" *ngIf="tasks">
+  <!-- create tasks -->
+  <form>
+    <label for="newTask">Enter New Task</label>
+    <input type="text" id="newTaskId" name="newTask" />
+    <button type="submit" (click)="newTask()">Create</button>
+  </form>
   <ul>
     <li *ngFor="let task of tasks">
       <div class="task">
