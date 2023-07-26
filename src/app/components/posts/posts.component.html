@@ -8,11 +8,12 @@
   <ul>
     <li *ngFor="let post of posts">
       <div class="post">
-        <mat-card> 
+        <mat-card [routerLink]="['/', post.id, 'comments']"> 
+        <!-- <mat-card [routerLink]="['./${userId}/comments']">  -->
           <!-- add click condition here -->
           <mat-card-title> {{ post.title }} </mat-card-title>
           <mat-card-subtitle>
-            TaskID: {{ post.id }} UserID: {{ post.userId }}
+            PostID: {{ post.id }} UserID: {{ post.userId }}
           </mat-card-subtitle>
           <mat-card-content>
             {{ post.body }}

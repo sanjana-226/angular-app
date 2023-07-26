@@ -2,8 +2,20 @@
   <!-- <div class="imgcontainer">
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div> -->
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required />
+  </div>
+  <!-- <button (click)="createUser()">Create User</button> -->
+  <button type="button" (click)="createUser()" [routerLink]="['./todo']">
+    Login
+  </button>
 
-  <div class="container">
+  <!-- <div class="container">
     <label for="email">Email </label>
     <input
       id="email"
@@ -20,18 +32,17 @@
       formControlName="password"
       placeholder="Enter Password"
       required
-    />
+    /> -->
 
-    <!-- <button type="submit">Login</button> -->
+  <!-- <button type="submit">Login</button>
     <button type="submit" [routerLink]="['./todo']">Login</button>
-  </div>
+  </div> -->
 
   <div class="container" style="background-color: #f1f1f1">
     <h3>New User?</h3>
     <a class="nav-link" [routerLink]="['./register']">Register</a> <br />
   </div>
 </form>
-
 
 <!-- form.addEventListener("submit", function(e){
   e.preventDefault();

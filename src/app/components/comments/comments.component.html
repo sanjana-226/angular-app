@@ -1,0 +1,26 @@
+<div class="comments" *ngIf="comments.length > 0">
+  <h2>Comments for Post ID: {{ postId }}</h2>
+  <ul>
+    <li *ngFor="let comment of comments">
+      <div class="comment">
+        <mat-card>
+          <mat-card-title>
+            <strong>Name:</strong> {{ comment.name }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            <strong>Email:</strong> {{ comment.email }}
+          </mat-card-subtitle>
+          <mat-card-content>
+            <strong>Body:</strong> {{ comment.body }}
+          </mat-card-content>
+        </mat-card>
+
+        <hr />
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="no-comments" *ngIf="comments.length === 0">
+  <p>No comments found for Post ID: {{ postId }}</p>
+</div>

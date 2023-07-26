@@ -4,6 +4,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { TodoComponent } from "./components/todo/todo.component";
 import { PostsComponent } from "./components/posts/posts.component";
 import { AlbumComponent } from "./components/album/album.component";
+import { CommentsComponent } from "./components/comments/comments.component";
 
 const routeConfig: Routes = [
   {
@@ -14,7 +15,7 @@ const routeConfig: Routes = [
     path: "register",
     component: RegisterComponent,
   },
-  
+
   {
     path: "todo",
     component: TodoComponent,
@@ -26,6 +27,10 @@ const routeConfig: Routes = [
   {
     path: "album",
     component: AlbumComponent,
+  },
+  {
+    path: ":postId/comments",
+    component: CommentsComponent,
   },
 ];
 
