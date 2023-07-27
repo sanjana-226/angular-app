@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class AuthService {
-  private apiUrl = 'https://reqres.in/api';
+  private apiUrl = "https://reqres.in/api";
 
   constructor() {}
 
@@ -16,15 +16,15 @@ export class AuthService {
     };
 
     return fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .catch((error) => {
-        console.error('Error during registration:', error);
+        console.error("Error during registration:", error);
         throw error;
       });
   }
@@ -37,15 +37,15 @@ export class AuthService {
     };
 
     return fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .catch((error) => {
-        console.error('Error during login:', error);
+        console.error("Error during login:", error);
         throw error;
       });
   }

@@ -14,47 +14,10 @@ import { AuthService } from "src/app/auth.service";
 @Component({
   selector: "app-login",
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink,ReactiveFormsModule,],
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
-// export class LoginComponent {
-//   applyForm = new FormGroup({
-//     email: new FormControl(""),
-//     password: new FormControl(""),
-//   });
-// }
-
-// export class LoginComponent {
-//   email: string = "";
-//   password: string = "";
-
-//   createUser() {
-//     if (this.email && this.password) {
-//       const userData = {
-//         email: this.email,
-//         password: this.password,
-//       };
-
-//       fetch("https://reqres.in/api/users", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(userData),
-//       })
-//         .then((response) => response.json())
-//         .then((data) => {
-//           console.log("User created:", data);
-//           // You can handle success here, such as showing a success message to the user.
-//         })
-//         .catch((error) => {
-//           console.error("Error creating user:", error);
-//           // You can handle errors here, such as showing an error message to the user.
-//         });
-//     }
-//   }
-// }
 export class LoginComponent implements OnInit {
   userForm!: FormGroup;
 
@@ -70,10 +33,28 @@ export class LoginComponent implements OnInit {
       email: ["", [Validators.required, Validators.email]],
     });
   }
-  onLogin(email: string, password: string) {
-    this.authService
-      .login(email, password)
-      .then((response) => {})
-      .catch((error) => {});
+  onLogin(event: Event) {
+    event.preventDefault(); // Prevent default form submission
+    if (this.userForm.valid) {
+      const email = this.userForm.get('email')?.value;
+      const password = this.userForm.get('password')?.value;
+
+      this.authService.login(email, password)
+        .then((response) => {
+          // Handle the login response
+          console.log('Login successful:', response);
+        })
+        .catch((error) => {
+          // Handle login error
+          console.error('Login error:', error);
+        });
+    } else {
+      // Form is not valid, show error messages or perform necessary actions.
+    }
+  // onLogin(email: string, password: string) {
+  //   this.authService
+  //     .login(email, password)
+  //     .then((response) => {})
+  //     .catch((error) => {});
   }
 }

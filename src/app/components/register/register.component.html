@@ -1,5 +1,6 @@
 <h2>Register</h2>
-<form (submit)="onRegister(email.value, password.value)">
+<!-- <form (submit)="onRegister(email.value, password.value)"> -->
+  <form [formGroup]="applyForm" (submit)="onRegister()">
   <div>
     <label>Email:</label>
     <input type="email" #email required />
@@ -16,6 +17,6 @@
     <label>Password:</label>
     <input type="job" #password required />
   </div>
-
-  <button type="submit" [routerLink]="['']">Register</button>
+  <button type="submit" [routerLink]="['']" [disabled]="!applyForm.valid">Register</button>
+  <button type="submit" [routerLink]="['']" >Register</button>
 </form>
