@@ -1,18 +1,21 @@
-<body>
-  <h1>Register</h1>
-  <label for="email">Email </label>
-  <input id="email" type="text" formControlName="email" />
-
-  <label for="password">Password </label>
-  <input id="password" type="password" formControlName="password" />
-
-  <label for="name">Name </label>
-  <input id="name" type="text" formControlName="name" />
-
-  <label for="job">Job </label>
-  <input id="job" type="text" formControlName="job" />
+<h2>Register</h2>
+<form (submit)="onRegister(email.value, password.value)">
+  <div>
+    <label>Email:</label>
+    <input type="email" #email required />
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" #password required />
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="name" #email required />
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="job" #password required />
+  </div>
 
   <button type="submit" [routerLink]="['']">Register</button>
-  <!-- register user w api? -->
-
-</body>
+</form>

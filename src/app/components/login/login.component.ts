@@ -1,12 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormControl, FormGroup, ReactiveFormsModule, FormBuilder,Validators } from "@angular/forms";
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators,
+} from "@angular/forms";
 import { RouterLink, RouterOutlet } from "@angular/router";
+import { AuthService } from "src/app/auth.service";
 // import { NgModel } from "@angular/forms";
+
 @Component({
   selector: "app-login",
   standalone: true,
-  imports: [CommonModule, RouterLink,],
+  imports: [CommonModule, RouterLink],
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
@@ -50,7 +58,10 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 export class LoginComponent implements OnInit {
   userForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.userForm = this.formBuilder.group({
@@ -59,27 +70,10 @@ export class LoginComponent implements OnInit {
       email: ["", [Validators.required, Validators.email]],
     });
   }
-
-  createUser() {
-    if (this.userForm.valid) {
-      const userData = this.userForm.value;
-
-      fetch("https://reqres.in/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("User created:", data);
-          // You can handle success here, such as showing a success message to the user.
-        })
-        .catch((error) => {
-          console.error("Error creating user:", error);
-          // You can handle errors here, such as showing an error message to the user.
-        });
-    }
+  onLogin(email: string, password: string) {
+    this.authService
+      .login(email, password)
+      .then((response) => {})
+      .catch((error) => {});
   }
 }
