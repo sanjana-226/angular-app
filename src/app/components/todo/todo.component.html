@@ -1,13 +1,10 @@
 <div class="sidenav">
-  <!-- <a [routerLink]="['../../dashboard']">Dashboard</a> -->
   <a>ToDo</a>
   <a [routerLink]="['../posts']">Posts</a>
   <a [routerLink]="['../album']">Album</a>
 </div>
 <div class="main" *ngIf="tasks">
-  <!-- create tasks -->
   <mat-card><form>
-    <!-- <label for="newTaskId">Enter New Task</label> -->
     <input type="text" id="newTaskId" name="newTask" />
     <button type="submit" (click)="newTask()"> New Task </button>
   </form></mat-card>

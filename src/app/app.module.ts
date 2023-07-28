@@ -9,7 +9,6 @@ import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { ImageDetailsComponent } from './components/image-details/image-details.component';
 
 @NgModule({
   imports: [

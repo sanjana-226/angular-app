@@ -36,18 +36,15 @@ export class RegisterComponent {
         this.authService
           .register(email, password)
           .then((response) => {
-            // Handle the registration response
             console.log("Registration successful:", response);
           })
           .catch((error) => {
-            // Handle registration error
             console.error("Registration error:", error);
           });
       } else {
         console.error("Email or password is missing.");
       }
     } else {
-      // Form is not valid, show error messages or perform necessary actions.
     }
   }
 }

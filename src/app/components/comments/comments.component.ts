@@ -24,14 +24,12 @@ export class CommentsComponent implements OnInit {
         this.postId = +postIdParam;
         this.fetchCommentsForPost(this.postId);
       } else {
-        // Handle the case where postId is not available
         console.error('Post ID is not available.');
       }
     });
   }
 
   fetchCommentsForPost(postId: number) {
-    // Assuming you have the endpoint to fetch comments by postId
     fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
       .then((response) => response.json())
       .then((data: CommentModel[]) => {

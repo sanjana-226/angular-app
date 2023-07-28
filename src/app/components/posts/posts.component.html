@@ -1,5 +1,4 @@
 <div class="sidenav">
-  <!-- <a [routerLink]="['../../dashboard']">Dashboard</a> -->
   <a [routerLink]="['../todo']">ToDo</a>
   <a>Posts</a>
   <a [routerLink]="['../album']">Album</a>
@@ -9,8 +8,6 @@
     <li *ngFor="let post of posts">
       <div class="post">
         <mat-card [routerLink]="['/', post.id, 'comments']"> 
-        <!-- <mat-card [routerLink]="['./${userId}/comments']">  -->
-          <!-- add click condition here -->
           <mat-card-title> {{ post.title }} </mat-card-title>
           <mat-card-subtitle>
             PostID: {{ post.id }} UserID: {{ post.userId }}

@@ -13,10 +13,9 @@ import { MatCardModule } from "@angular/material/card";
   styleUrls: ["./todo.component.css"],
 })
 export class TodoComponent implements OnInit {
-  tasks: TodoModel[] = []; // Assuming the API response returns an array of objects
+  tasks: TodoModel[] = []; 
 
   ngOnInit() {
-    //userid 1 only or ?
     fetch("https://jsonplaceholder.typicode.com/todos?userId=1")
       .then((response) => response.json())
       .then((data) => {
@@ -35,8 +34,8 @@ export class TodoComponent implements OnInit {
       method: "POST",
       body: JSON.stringify({
         title: taskTitle, 
-        id: 1, //calculate?
-        userId: 1, //input
+        id: 1, 
+        userId: 1, 
         completed: false,
       }),
       headers: {

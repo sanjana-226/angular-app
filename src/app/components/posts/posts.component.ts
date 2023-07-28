@@ -13,7 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 
 export class PostsComponent implements OnInit {
-  posts: PostsModel[]=[]; // Assuming the API response returns an array of objects
+  posts: PostsModel[]=[]; 
 
   ngOnInit() {
     fetch('https://jsonplaceholder.typicode.com/posts')

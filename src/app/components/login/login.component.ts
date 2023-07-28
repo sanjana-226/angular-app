@@ -9,7 +9,6 @@ import {
 } from "@angular/forms";
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { AuthService } from "src/app/auth.service";
-// import { NgModel } from "@angular/forms";
 
 @Component({
   selector: "app-login",
@@ -34,27 +33,20 @@ export class LoginComponent implements OnInit {
     });
   }
   onLogin(event: Event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
     if (this.userForm.valid) {
       const email = this.userForm.get('email')?.value;
       const password = this.userForm.get('password')?.value;
 
       this.authService.login(email, password)
         .then((response) => {
-          // Handle the login response
           console.log('Login successful:', response);
         })
         .catch((error) => {
-          // Handle login error
           console.error('Login error:', error);
         });
     } else {
-      // Form is not valid, show error messages or perform necessary actions.
     }
-  // onLogin(email: string, password: string) {
-  //   this.authService
-  //     .login(email, password)
-  //     .then((response) => {})
-  //     .catch((error) => {});
+  
   }
 }
