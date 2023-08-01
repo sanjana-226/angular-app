@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import {
   HttpClient,
   HttpHeaders,
-  HttpErrorResponse,
+  HttpErrorResponse,HttpHandler
 } from "@angular/common/http";
 import { Observable } from "rxjs";
 
@@ -10,14 +10,13 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class ApiService {
-  baseUri: string = "http://localhost:3000/router";
+  baseUri: string = "http://localhost:3000/movie";
   headers = new HttpHeaders().set("Content-Type", "application/json");
-  
+
   constructor(private htttp: HttpClient) {}
-  
-  getMovie(id: Number): Observable<any> {
-    let url = `${this.baseUri}/${id}`;
+
+  getMovie(): Observable<any> {
+    let url = `${this.baseUri}`;
     return this.htttp.get(url, { headers: this.headers });
   }
-  
 }

@@ -6,9 +6,10 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 
-// import { RegisterComponent } from "./components/register/register.component";
-// import { LoginComponent } from "./components/login/login.component";
-
+import { RegisterComponent } from "./components/register/register.component";
+import { LoginComponent } from "./components/login/login.component";
+import { ApiService } from "./services/api.service";
+import { AuthService } from "./services/auth.service";
 
 @NgModule({
   imports: [
@@ -18,6 +19,10 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    RegisterComponent,
+    LoginComponent,
   ],
+  providers:[ApiService,AuthService],
+  declarations:[]
 })
 export class AppModule {}
