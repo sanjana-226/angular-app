@@ -6,18 +6,20 @@ import { RouterLink } from "@angular/router";
 import { MovieModel } from "src/app/models/movies.model";
 import { MatCardModule } from "@angular/material/card";
 import { HttpClient } from "@angular/common/http";
-// import { HttpHandler } from "@angular/common/http";
+import { HttpHandler } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+
 @Component({
   selector: "app-movies",
   standalone: true,
   templateUrl: "./movies.component.html",
   styleUrls: ["./movies.component.css"],
-  imports: [CommonModule, RouterLink, MatCardModule],
+  imports: [CommonModule, RouterLink, MatCardModule,HttpClientModule],
   providers: [HttpClient,ApiService],
 })
 export class MoviesComponent {
-  movies: any = [];
-  // movies: MovieModel[] = [];
+  // movies: any = [];
+  movies: MovieModel[] = [];
 
 
   constructor(private apiService: ApiService) {}
@@ -25,12 +27,13 @@ export class MoviesComponent {
   ngOnInit(): void {
     this.fetchMovies();
   }
-
   async fetchMovies() {
     try {
-      this.movies = await this.apiService.getMovie();
+      const fetchedMovies = await this.apiService.getMovies().toPromise();
+      this.movies = fetchedMovies || []; // If fetchedMovies is undefined, assign an empty array
     } catch (error) {
-      console.error('Error fetching posts:', error);
+      console.error('Error fetching movies:', (error as Error).message);
     }
   }
+  
 }

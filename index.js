@@ -8,7 +8,7 @@ async function run() {
   try {
     await client.connect();
     const db = client.db("sample_mflix");
-    const collection = db.collection("movies");
+    const collection = db.collection("test");
     // Find the first document in the collection
     const first = await collection.findOne();
     console.log(first);

@@ -5,7 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
-
+import { HttpClient } from "@angular/common/http";
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ApiService } from "./services/api.service";
@@ -22,7 +22,7 @@ import { AuthService } from "./services/auth.service";
     RegisterComponent,
     LoginComponent,
   ],
-  providers:[ApiService,AuthService],
+  providers:[ApiService,AuthService,HttpClient],
   declarations:[]
 })
 export class AppModule {}

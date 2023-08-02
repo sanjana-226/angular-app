@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("");
 
 mongoose.connect(
     "mongodb+srv://myAtlasDBUser:pwd@atlascluster.kydmpyp.mongodb.net/?retryWrites=true&w=majority",
@@ -11,3 +11,5 @@ mongoose.connect(
   mongoose.connection.on("open", () => {
     console.log("Connection successful");
   });
+
+  
