@@ -15,11 +15,11 @@ export class ApiService {
   baseUri: string = "http://localhost:3000/";
   headers = new HttpHeaders().set("Content-Type", "application/json");
 
-  constructor(private htttp: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getMovies(): Observable<MovieModel[]> {
     let url = `${this.baseUri}`;
     console.log("getMovies");
-    return this.htttp.get<MovieModel[]>(url, { headers: this.headers });
+    return this.http.get<MovieModel[]>(url, { headers: this.headers });
   }
 }

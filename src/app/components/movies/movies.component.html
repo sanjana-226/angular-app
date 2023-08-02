@@ -4,6 +4,7 @@
   <a [routerLink]="['../album']">Album</a>
   <a [routerLink]="['../movies']">Movie</a>
 </div>
+
 <div class="main" >
   <ul>
     <li *ngFor="let movie of movies | slice : 0 : 5">
