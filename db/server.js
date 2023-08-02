@@ -16,7 +16,7 @@ async function getMoviesFromDatabase() {
   try {
     await client.connect();
     const db = client.db("sample_mflix");
-    const collection = db.collection("test");
+    const collection = db.collection("movies");
     return await collection.find({}).toArray();
   } catch (error) {
     console.error("Error fetching movies:", error);
@@ -30,6 +30,7 @@ app.get("/", async (req, res) => {
   try {
     const movies = await getMoviesFromDatabase();
     res.json(movies);
+    console.log("app.get");
   } catch (error) {
     res.status(500).json({ error: "Error fetching movies" });
   }

@@ -1,11 +1,19 @@
-<h1>movies</h1>
-
-<!-- <div *ngFor="let movie of movies">
-  <h3>{{ movie.title }}</h3>
-  <p>Year: {{ movie.year }}</p>
-</div> -->
-
-<div *ngFor="let movie of movies">
-  <h3>{{ movie.name}}</h3>
-  <p>Year: {{ movie.year }}</p>
+<div class="sidenav">
+  <a [routerLink]="['../todo']">ToDo</a>
+  <a>Posts</a>
+  <a [routerLink]="['../album']">Album</a>
+  <a [routerLink]="['../movies']">Movie</a>
+</div>
+<div class="main" >
+  <ul>
+    <li *ngFor="let movie of movies | slice : 0 : 5">
+      <div class="movies">
+        <mat-card>
+          <mat-card-title>{{ movie.title }}</mat-card-title>
+          <mat-card-subtitle>{{ movie.released }}</mat-card-subtitle>
+          <mat-card-content>{{ movie.plot }}</mat-card-content>
+        </mat-card>
+      </div>
+    </li>
+  </ul>
 </div>

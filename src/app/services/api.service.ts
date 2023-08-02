@@ -2,9 +2,10 @@ import { Injectable } from "@angular/core";
 import {
   HttpClient,
   HttpHeaders,
-  HttpErrorResponse,HttpHandler
+  HttpErrorResponse,
+  HttpHandler,
 } from "@angular/common/http";
-import { Observable ,map} from "rxjs";
+import { Observable, map } from "rxjs";
 import { MovieModel } from "../models/movies.model";
 
 @Injectable({
@@ -18,6 +19,7 @@ export class ApiService {
 
   getMovies(): Observable<MovieModel[]> {
     let url = `${this.baseUri}`;
+    console.log("getMovies");
     return this.htttp.get<MovieModel[]>(url, { headers: this.headers });
   }
 }
