@@ -7,6 +7,7 @@ import {
 } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 import { MovieModel } from "../models/movies.model";
+import { MovieCommentModel } from "../models/moviecomment.model";
 
 @Injectable({
   providedIn: "root",
@@ -21,5 +22,11 @@ export class ApiService {
     let url = `${this.baseUri}`;
     console.log("getMovies");
     return this.http.get<MovieModel[]>(url, { headers: this.headers });
+  }
+
+  getComments(): Observable<MovieCommentModel[]> {
+    let url = `${this.baseUri}`;
+    console.log("getComments");
+    return this.http.get<MovieCommentModel[]>(url, { headers: this.headers });
   }
 }

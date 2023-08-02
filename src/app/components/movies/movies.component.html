@@ -5,7 +5,7 @@
   <a [routerLink]="['../movies']">Movie</a>
 </div>
 
-<div class="main" >
+<div class="main">
   <ul>
     <li *ngFor="let movie of movies | slice : 0 : 5">
       <div class="movies">
@@ -18,3 +18,16 @@
     </li>
   </ul>
 </div>
+<!-- <div class="main">
+  <ul>
+    <li *ngFor="let comment of comments | slice : 0 : 5">
+      <div class="comments">
+        <mat-card>
+          <mat-card-title>{{ comment.name }}</mat-card-title>
+          <mat-card-subtitle>{{ comment.date }}</mat-card-subtitle>
+          <mat-card-content>{{ comment.text }} </mat-card-content>
+        </mat-card>
+      </div>
+    </li>
+  </ul>
+</div> -->
