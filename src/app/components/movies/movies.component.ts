@@ -18,9 +18,7 @@ import { HttpClientModule } from "@angular/common/http";
   providers: [HttpClient,ApiService],
 })
 export class MoviesComponent {
-  // movies: any = [];
   movies: MovieModel[] = [];
-
 
   constructor(private apiService: ApiService) {}
 
@@ -30,10 +28,9 @@ export class MoviesComponent {
   async fetchMovies() {
     try {
       const fetchedMovies = await this.apiService.getMovies().toPromise();
-      this.movies = fetchedMovies || []; // If fetchedMovies is undefined, assign an empty array
+      this.movies = fetchedMovies || []; 
     } catch (error) {
       console.error('Error fetching movies:', (error as Error).message);
     }
   }
-  
 }
